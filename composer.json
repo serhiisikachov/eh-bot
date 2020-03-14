@@ -1,0 +1,15 @@
+{
+    "name": "sikachevsergey/tg-bot",
+    "description": "Module represents implementation of class signup telegram bot for school of English.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Serhii Sikachov",
+            "email": "serhii.sikachov@gmail.com"
+        }
+    ],
+    "require": {
+	"php": ">=7.3",
+        "longman/telegram-bot": "^0.61.1"
+    }
+}

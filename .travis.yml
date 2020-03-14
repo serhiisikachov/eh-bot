@@ -1,0 +1,43 @@
+language: php
+
+env:
+  global:
+    - PROJECT_REPO=git@github.com:sergeysikachev/class-signup-telegram-bot.git
+    - PROJECT_DIR=english-hub/main
+    - PROJECT_BRANCH=master
+matrix:
+  fast_finish: true
+
+  include:
+    - php: "7.3"
+
+addons:
+  postgresql: "11"
+
+  hosts:
+    - www.eh-bot.test
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+services:
+  - postgresql
+
+sudo: required
+
+before_install:
+  - git clone --depth=1 --branch=$PROJECT_BRANCH $PROJECT_REPO $PROJECT_DIR
+  - cd $PROJEC_DIR
+
+install:
+  - composer install --optimize-autoloader --no-interaction
+
+#before_script:
+
+
+#script:
+
+
+notifications:
+  email: false
